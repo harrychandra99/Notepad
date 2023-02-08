@@ -29,7 +29,6 @@ class MainActivity : AppCompatActivity() {
         binding.btnAddNote.setOnClickListener {
             startActivity(Intent(this, AddNoteActivity::class.java))
         }
-
         setUpRecycleView()
     }
 
