@@ -1,5 +1,6 @@
 package org.meicode.notepad.adapter
 
+import android.annotation.SuppressLint
 import android.content.Context
 import android.content.Intent
 import android.view.LayoutInflater
@@ -11,8 +12,9 @@ import org.meicode.notepad.UpdateNoteActivity
 import org.meicode.notepad.database.NoteEntity
 import org.meicode.notepad.databinding.ItemNoteBinding
 import javax.inject.Inject
+import javax.inject.Singleton
 
-
+@Singleton
 class NoteAdapter @Inject constructor(): RecyclerView.Adapter<NoteAdapter.ViewHolder>() {
 
     private lateinit var binding: ItemNoteBinding
@@ -21,6 +23,7 @@ class NoteAdapter @Inject constructor(): RecyclerView.Adapter<NoteAdapter.ViewHo
     override fun onCreateViewHolder(parent : ViewGroup, viewType : Int) : ViewHolder {
         val inflater = LayoutInflater.from(parent.context)
         binding = ItemNoteBinding.inflate(inflater,parent,false)
+        context = parent.context
         return ViewHolder()
     }
 
