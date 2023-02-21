@@ -5,9 +5,9 @@ import android.os.Bundle
 import android.widget.Toast
 import androidx.activity.viewModels
 import dagger.hilt.android.AndroidEntryPoint
-import org.meicode.notepad.adapter.NoteAdapter
 import org.meicode.notepad.database.NoteEntity
 import org.meicode.notepad.databinding.ActivityUpdateBinding
+import org.meicode.notepad.utils.Constants.BUNDLE_NOTE_ID
 import org.meicode.notepad.viewModel.updateNodeViewModel.UpdateNoteViewModel
 import javax.inject.Inject
 
@@ -31,7 +31,7 @@ class UpdateNoteActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         intent.extras?.let {
-            noteId = it.getInt("NOTE_ID")
+            noteId = it.getInt(BUNDLE_NOTE_ID)
         }
 
         binding.apply {

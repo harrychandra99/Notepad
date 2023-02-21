@@ -11,6 +11,7 @@ import androidx.recyclerview.widget.RecyclerView
 import org.meicode.notepad.UpdateNoteActivity
 import org.meicode.notepad.database.NoteEntity
 import org.meicode.notepad.databinding.ItemNoteBinding
+import org.meicode.notepad.utils.Constants.BUNDLE_NOTE_ID
 import javax.inject.Inject
 import javax.inject.Singleton
 
@@ -41,7 +42,7 @@ class NoteAdapter @Inject constructor(): RecyclerView.Adapter<NoteAdapter.ViewHo
                 tvDesc.text = item.noteDesc
                 root.setOnClickListener {
                     val intent = Intent(context, UpdateNoteActivity::class.java)
-                    intent.putExtra("NOTE_ID", item.noteId)
+                    intent.putExtra(BUNDLE_NOTE_ID, item.noteId)
                     context.startActivity(intent)
                 }
             }

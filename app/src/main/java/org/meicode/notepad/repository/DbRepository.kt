@@ -8,9 +8,9 @@ class DbRepository
     @Inject constructor(
     private val dao : NoteDao
 ) {
-    fun saveNote(note : NoteEntity) = dao.inserNote(note)
-    fun updateNote(note : NoteEntity) = dao.updateNote(note)
-    fun deleteNote(note : NoteEntity) = dao.deleteNote(note)
+    fun saveNote(entity : NoteEntity) = dao.inserNote(entity)
+    fun updateNote(entity : NoteEntity) = dao.updateNote(entity)
+    fun deleteNote(entity : NoteEntity) = dao.deleteNote(entity)
     fun getNote(id : Int) = dao.getNote(id)
     fun getAllNotes() = dao.getAllNotes()
 }
