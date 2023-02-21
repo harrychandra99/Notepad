@@ -30,7 +30,6 @@ class NoteAdapter @Inject constructor(): RecyclerView.Adapter<NoteAdapter.ViewHo
 
     override fun onBindViewHolder(holder : ViewHolder, position : Int) {
         holder.bind(differ.currentList[position])
-        holder.setIsRecyclable(false)
     }
 
     override fun getItemCount() : Int = differ.currentList.size
